@@ -1,3 +1,10 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  root to: "api/v1/users#index"
+  scope module: 'api' do
+    namespace :v1 do
+      resources :users, only: %i[create show]
+      resources :cars, only: %i[index show]
+      post 'appointments', to: 'users#new_appointment'
+    end
+  end
 end
