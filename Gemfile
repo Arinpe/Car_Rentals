@@ -40,9 +40,17 @@ group :test do
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
+<<<<<<< HEAD
 gem 'active_model_serializers'
 gem 'cloudinary'
 gem 'hirb'
 gem 'jwt'
 gem 'rubocop'
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
+=======
+gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+gem 'bcrypt', '~> 3.1.7'
+gem 'rack-cors'
+gem 'jwt'
+>>>>>>> 8802620d73c5f55fb978631e92d12330e1d0a2b7

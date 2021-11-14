@@ -2,14 +2,20 @@
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
 #
+<<<<<<< HEAD
 # This file is the source Rails uses to define your schema when running `rails
 # db:schema:load`. When creating a new database, `rails db:schema:load` tends to
+=======
+# This file is the source Rails uses to define your schema when running `bin/rails
+# db:schema:load`. When creating a new database, `bin/rails db:schema:load` tends to
+>>>>>>> 8802620d73c5f55fb978631e92d12330e1d0a2b7
 # be faster and is potentially less error prone than running all of your
 # migrations from scratch. Old migrations may fail to apply correctly if those
 # migrations use external dependencies or application code.
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 2020_11_18_124310) do
 
   create_table "active_storage_attachments", force: :cascade do |t|
@@ -55,11 +61,25 @@ ActiveRecord::Schema.define(version: 2020_11_18_124310) do
   create_table "users", force: :cascade do |t|
     t.string "username"
     t.string "email"
+=======
+ActiveRecord::Schema.define(version: 2021_10_26_121358) do
+
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
+  create_table "users", force: :cascade do |t|
+    t.string "username"
+    t.string "password_digest"
+    t.integer "age"
+>>>>>>> 8802620d73c5f55fb978631e92d12330e1d0a2b7
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
+<<<<<<< HEAD
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "appointments", "cars"
   add_foreign_key "appointments", "users"
+=======
+>>>>>>> 8802620d73c5f55fb978631e92d12330e1d0a2b7
 end

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # SQLite. Versions 3.8.0 and up are supported.
 #   gem install sqlite3
 #
@@ -6,11 +7,17 @@
 #
 default: &default
   adapter: sqlite3
+=======
+default: &default
+  adapter: postgresql
+  encoding: unicode
+>>>>>>> 8802620d73c5f55fb978631e92d12330e1d0a2b7
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   timeout: 5000
 
 development:
   <<: *default
+<<<<<<< HEAD
   database: db/development.sqlite3
 
 # Warning: The database defined as "test" will be erased and
@@ -23,3 +30,14 @@ test:
 production:
   <<: *default
   database: db/production.sqlite3
+=======
+  database: car_rentals_dev
+
+test:
+  <<: *default
+  database: car_rentals_test
+
+
+production:
+  url: <%= ENV['DATABASE_URL'] %>
+>>>>>>> 8802620d73c5f55fb978631e92d12330e1d0a2b7
