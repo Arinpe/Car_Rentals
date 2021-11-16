@@ -3,11 +3,12 @@ class Car < ApplicationRecord
   has_many :appointments
   has_many :users, through: :appointments
 
-  has_one_attached :image
+  validates :year, presence: true
+  validates :horsepower, presence: true
+  validates :make, presence: true
+  validates :model, presence: true
+  validates :price, presence: true
+  validates :description, presence: true
+  validates :img_url, presence: true
 
-  validates :name, :description, :image, presence: true
-
-  def img_url
-    url_for(image)
-  end
 end

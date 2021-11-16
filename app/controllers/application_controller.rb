@@ -1,26 +1,10 @@
 class ApplicationController < ActionController::API
-<<<<<<< HEAD
   include ActionController::Serialization
   rescue_from ActiveRecord::RecordNotFound, with: :not_found
   rescue_from ActiveRecord::RecordInvalid, with: :invalid
   rescue_from ActiveRecord::RecordNotUnique, with: :not_unique
 
-  private
-
-  def not_found(errors)
-    render json: errors, status: :not_found
-  end
-
-  def invalid(errors)
-    render json: errors, status: :unprocessable_entity
-  end
-
-  def not_unique(errors)
-    render json: errors, status: :internal_server_error
-  end
-end
-=======
-    before_action :authorized
+  before_action :authorized
 
   def encode_token(payload)
     JWT.encode(payload, 'yourSecret')
@@ -44,10 +28,16 @@ end
   end
 
   def logged_in_user
+    @user = nil
     if decoded_token
       user_id = decoded_token[0]['user_id']
       @user = User.find_by(id: user_id)
     end
+    @user
+  end
+
+  def current_user
+    logged_in_user
   end
 
   def logged_in?
@@ -57,5 +47,18 @@ end
   def authorized
     render json: { message: 'Please log in' }, status: :unauthorized unless logged_in?
   end
+
+  private
+
+  def not_found(errors)
+    render json: errors, status: :not_found
+  end
+
+  def invalid(errors)
+    render json: errors, status: :unprocessable_entity
+  end
+
+  def not_unique(errors)
+    render json: errors, status: :internal_server_error
+  end
 end
->>>>>>> 8802620d73c5f55fb978631e92d12330e1d0a2b7
