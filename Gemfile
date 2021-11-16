@@ -12,7 +12,7 @@ gem 'puma', '~> 4.1'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use Active Model has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
+gem 'bcrypt', '~> 3.1.7'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
@@ -29,6 +29,8 @@ group :development, :test do
   gem 'sqlite3', '~> 1.4'
   # Use RSpec for specs
   gem 'rspec-rails'
+  gem 'factory_bot_rails'
+  gem 'faker'
 end
 
 group :production do
@@ -40,17 +42,9 @@ group :test do
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-<<<<<<< HEAD
 gem 'active_model_serializers'
 gem 'cloudinary'
 gem 'hirb'
 gem 'jwt'
 gem 'rubocop'
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
-=======
-gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
-
-gem 'bcrypt', '~> 3.1.7'
-gem 'rack-cors'
-gem 'jwt'
->>>>>>> 8802620d73c5f55fb978631e92d12330e1d0a2b7
