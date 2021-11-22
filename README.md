@@ -31,7 +31,7 @@ There are a couple of endpoints exposed by this api and can be accessed online u
 
 ## Live Demo
 
-For the full working application Click [here](https://infinite-river-09169.herokuapp.com/)
+For the full working application Click [here](https://carrrental.herokuapp.com/)
 
 ## Installation
 
