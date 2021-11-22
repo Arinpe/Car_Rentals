@@ -1,3 +1,13 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  root to: "api/v1/users#index"
+  namespace :api do
+    namespace :v1 do
+      resources :users, only: %i[create show]
+      post '/login', to: 'users#login'
+      resources :cars, only: %i[index show]
+      post '/appointments', to: 'users#new_appointment'
+      get '/appointments', to: 'users#retrieve_appointments'
+      get '/me', to: 'users#show'
+    end
+  end
 end
