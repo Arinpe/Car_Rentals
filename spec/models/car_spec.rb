@@ -7,8 +7,6 @@ RSpec.describe Car, type: :model do
   end
 
   context 'Validations' do
-   
-
     scenario { should validate_presence_of(:year) }
     scenario { should validate_presence_of(:description) }
     scenario { should validate_presence_of(:model) }

@@ -6,7 +6,7 @@ Rails.application.routes.draw do
       post '/login', to: 'users#login'
       resources :cars, only: %i[index show]
       post '/appointments', to: 'users#new_appointment'
-      get '/appointments', to: 'users#get_appointments'
+      get '/appointments', to: 'users#retrieve_appointments'
       get '/me', to: 'users#show'
     end
   end

@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe Api::V1::UsersController, type: :controller do
   let(:user) { User.create(username: 'username', password: 'password') }
   before { allow(controller).to receive(:authorized).and_return(true) }
-  before {  allow(controller).to receive(:current_user) { user }}
+  before { allow(controller).to receive(:current_user) { user } }
 
   describe 'use authorize request before action' do
     context 'when authorized' do
